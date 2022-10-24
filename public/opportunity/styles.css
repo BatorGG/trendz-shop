@@ -32,7 +32,7 @@ input[type=number] {
 .announcement {
 	width: 100%;
 	height: 45px;
-	background-color: DodgerBlue;
+	background-color: #ff0050;
 	position: relative;
 }
 
@@ -143,7 +143,7 @@ input[type=number] {
 
 /*Footer*/
 .footer-section {
-	background-color: dodgerblue;
+	background-color: #ff0050;
 	color: #ffffff;
 	text-align: center;
 	padding: 20px;
@@ -235,8 +235,8 @@ input[type=number] {
 
 
 .button {
-	background-color: dodgerblue;
-	border: 2px solid rgb(10, 114, 215);
+	background-color: #ff0050;
+	border: 2px solid #e60049;
 	color: #ffffff;
 	cursor: pointer;
 }
@@ -327,7 +327,7 @@ input[type=number] {
 }
 
 input {
-	border: 1px solid dodgerblue;
+	border: 1px solid #ff0050;
 	width: 40%;
 	height: 30px;
 }
@@ -351,6 +351,10 @@ input {
 
 .simple-section h1 {
 	margin-bottom: 20px;
+}
+
+.alignleft {
+	text-align: left !important;
 }
 
 
@@ -497,7 +501,6 @@ input {
 	.announcement {
 		width: 100%;
 		height: 35px;
-		background-color: DodgerBlue;
 		position: relative;
 	}
 
