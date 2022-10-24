@@ -83,12 +83,12 @@ function addToCart(x, name){
 		if (size == "Pink") itemId = 9;
 	}
 
-	var itemName = storeItems.filter(obj => { return obj.id === itemId })[0].name;
-
 	if (size == "select"){
-		alert("Please select size or color!")
+		alert("Please select size or color!");
 	}
 	else {
+
+		var itemName = storeItems.filter(obj => { return obj.id === itemId })[0].name;
 
 		var itemIds = [];
 		for (var i = 0; i < cartItems.length; i++){
