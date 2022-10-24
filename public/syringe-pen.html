@@ -1,0 +1,393 @@
+<!doctype html>
+<html>
+<head>
+	<title>Syringe Pen - Trendz Shop</title>
+	<link rel="icon" type="image/x-icon" href="./images/favicon.png">
+	<meta name="description" content="Our first page">
+	<meta name="keywords" content="html tutorial template">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="updateCart(); cartNotification();">
+
+	<!-- Announcement Dekstop and Mobile-->
+    	<div class="announcement">
+    		<div class="announcement-text-container">
+				<h1>Free Shipping on all products!</h1>
+			</div>
+		</div>
+
+	<!-- Topnav Mobile-->
+	<div class="topnav-mobile">
+		<div class="topnav-top mobile">
+			<div class="menu-opener">
+				<a href="javascript:void(0);" class="icon" onclick="showMenu(); hideCart();">&#9776;</a>
+			</div>
+			<div class="navbar-logo">
+				<img src="./images/logo.png">
+			</div>
+			<div class="cart-icon" onclick="showCart(); hideMenu();">
+				<i class="fa fa-shopping-bag bag"></i>
+				<i class="fa fa-circle cart-notification hidden"></i>
+			</div>
+		</div>
+		<div class="menu-opened hidden mobile" id="menu-opened">
+			<div class="menupoint">
+				<a href="./index.html">Home</a>
+			</div>
+			<div class="menupoint">
+				<a href="./products.html">Products</a>
+			</div>
+			<div class="menupoint">
+				<a href="./aboutus.html">About Us</a>
+			</div>
+			<div class="menupoint">
+				<a href="./faq.html">FAQ</a>
+			</div>
+			<div class="menupoint">
+				<a href="./contact.html">Contact</a>
+			</div>
+			<div class="menupoint">
+				<a href="./opportunity/index.html">Business Opportunity</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Topnav Desktop-->
+	<div class="topnav-desktop-container">
+		<div class="topnav desktop" id="topnav-id">
+			<div class="navbar-logo">
+				<img src="./images/logo.png">
+			</div>
+			<a href="./index.html">Home</a>
+			<a href="./products.html">Products</a>
+			<a href="./aboutus.html">About Us</a>
+			<a href="./faq.html">FAQ</a>
+			<a href="./contact.html">Contact</a>
+			<a href="./opportunity/index.html">Business Opportunity</a>
+			<div class="cart-icon" onclick="showCart()">
+				<i class="fa fa-shopping-bag bag"></i>
+				<i class="fa fa-circle cart-notification hidden"></i>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Cart -->
+	<div class="cart hidden" id="cart">
+
+		<div class="cart-close-container">
+			<h1>Cart</h1>
+			<div class="cart-close" onclick="showCart()">
+				<h1>X</h1>
+			</div>
+		</div>
+
+		<div class="cart-titles">
+			<h3 class="cart-title-price">Price</h3>
+			<h3 class="cart-title-quantity">Quantity</h3>
+			<h3 class="cart-title-subtotal">Subtotal</h3>
+		</div>
+
+		<div class="cart-item-container" id="cart-item-container">
+
+			<!-- Cart item here-->
+
+		</div>
+
+		<div class="cart-bottom">
+			<h2 class="cart-total-title">Total</h2>
+			<h2 class="cart-total-amount" id="cart-total-amount">$0</h2>
+			<button class="cart-proceed" id="cart-proceed">Proceed To Checkout</button>
+		</div>
+
+		<div class="coupon">
+			<form>
+				<input type="text" name="coupon" id="coupon" class="coupon-field" placeholder="Enter Coupon!">
+			</form>
+			<button class="button" id="coupon-button" onclick="checkCoupon(document.getElementById('coupon').value);">Check Coupon</button>
+		</div>
+	</div>
+
+
+	<div class="largemonitor">
+	<!-- Home Product Mobile -->
+	<div class="home-product mobile">
+		<div class="productpage-product-title">
+			<h1>Syringe Pen</h1>
+		</div>
+		<div class="home-product-images mobile">
+			<div class="home-product-large-image">
+				<img src="./images/products/syringepen/1.jpg" alt="Main Image" id="main-image-mobile">
+			</div>
+			<div class="home-product-small-images">
+				<div class="home-product-small-image">
+					<img src="./images/products/syringepen/1.jpg" alt="Small Image Main" onmouseover="showBig(this)">
+				</div>
+				<div class="home-product-small-image">
+					<img src="./images/products/syringepen/2.jpg" alt="Small Image 1" onmouseover="showBig(this)">
+				</div>
+				<div class="home-product-small-image">
+					<img src="./images/products/syringepen/3.jpg" alt="Small Image 2" onmouseover="showBig(this)">
+				</div>
+				<div class="home-product-small-image">
+					<img src="./images/products/syringepen/4.jpg" alt="Small Image 3" onmouseover="showBig(this)">
+				</div>
+				<div class="home-product-small-image">
+					<img src="./images/products/syringepen/5.jpg" alt="Small Image 3" onmouseover="showBig(this)">
+				</div>
+				<div class="home-product-small-image">
+					<img src="./images/products/syringepen/6.jpg" alt="Small Image 3" onmouseover="showBig(this)">
+				</div>
+			</div>
+		</div>
+
+		<div class="home-product-other">
+			<div></div>
+			<!-- So we have tha same amount of elements as in desktop -->
+			<div class="productpage-prices">
+				<h2 class="original-price">$19.99</h2>
+				<h1 class="discounted-price">$9.99</h1>
+			</div>
+
+			<div class="custom-select-container">
+				<div class="custom-select">
+					<select name="color" id="color">
+						<option value="select">Color</option>
+						<option value="Red">Red</option>
+						<option value="Yellow">Yellow</option>
+						<option value="Green">Green</option>
+						<option value="Blue">Blue</option>
+					</select>
+				</div>
+			</div>
+
+			<div id="amount-div" class="amount-div">
+				<button id="minus-mobile">-</button><!--
+				--><input type="number" id="numberPlace-mobile" name="amount" value="1" class="amount-form"><!--
+				--><button id="plus-mobile">+</button>
+			</div>
+
+			<button id="atc-mobile" class="atc button" onclick="addToCart(this, 'Syringe Pen');">Add To Cart</button>
+
+			<br>
+			<img src="./images/secure_checkout.jpg" alt="Secure Checkout" class="secure-checkout">
+
+		</div>
+	</div>
+
+	<!-- Home Product Destop -->
+	<div class="productpage-product desktop">
+		<div class="home-product-column">
+			<div class="home-product-images">
+				<div class="home-product-large-image">
+					<img src="./images/products/syringepen/1.jpg" alt="Main Image" id="main-image">
+				</div>
+				<div class="home-product-small-images">
+					<div class="home-product-small-image">
+						<img src="./images/products/syringepen/1.jpg" alt="Small Image Main" onmouseover="showBig(this)">
+					</div>
+					<div class="home-product-small-image">
+						<img src="./images/products/syringepen/2.jpg" alt="Small Image 1" onmouseover="showBig(this)">
+					</div>
+					<div class="home-product-small-image">
+						<img src="./images/products/syringepen/3.jpg" alt="Small Image 2" onmouseover="showBig(this)">
+					</div>
+					<div class="home-product-small-image">
+						<img src="./images/products/syringepen/4.jpg" alt="Small Image 3" onmouseover="showBig(this)">
+					</div>
+					<div class="home-product-small-image">
+						<img src="./images/products/syringepen/5.jpg" alt="Small Image 3" onmouseover="showBig(this)">
+					</div>
+					<div class="home-product-small-image">
+						<img src="./images/products/syringepen/6.jpg" alt="Small Image 3" onmouseover="showBig(this)">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="home-product-column">
+			<div class="productpage-product-title">
+				<h1>Syringe Pen</h1>
+			</div>
+			<div class="productpage-prices">
+				<h2 class="original-price">$19.99</h2>
+				<h1 class="discounted-price">$9.99</h1>
+			</div>
+
+			<div class="custom-select-container">
+				<div class="custom-select">
+					<select name="color" id="color">
+						<option value="select">Color</option>
+						<option value="Red">Red</option>
+						<option value="Yellow">Yellow</option>
+						<option value="Green">Green</option>
+						<option value="Blue">Blue</option>
+					</select>
+				</div>
+			</div>
+
+			<div id="amount-div" class="amount-div">
+				<button id="minus">-</button><!--
+				--><input type="number" id="numberPlace" name="amount" value="1" class="amount-form"><!--
+				--><button id="plus">+</button>
+			</div>
+
+			<button id="atc" class="atc button" onclick="addToCart(this, 'Syringe Pen');">Add To Cart</button>
+
+			<br>
+			<img src="./images/secure_checkout.jpg" alt="Secure Checkout" class="secure-checkout">
+
+		</div>
+	</div>
+
+
+
+	<!-- Mobile -->
+	<div class="text-section mobile">
+		<h1>The Syringe Pen</h1>
+		<p>The Syringe Pen is the coolest pen you have ever seen. It works just like a regular pen, but looks like it's a syringe full of chemicals.</p>
+	</div>
+	<div class="image-section mobile">
+		<img src="./images/products/syringepen/2.jpg" alt="Image 0">
+	</div>
+
+	<div class="text-section mobile">
+		<h1>Be the coolest kid in class!</h1>
+		<p>Bring the coolest pen to school. Everyone will be amazed.</p>
+	</div>
+	<div class="image-section mobile">
+		<img src="./images/products/syringepen/4.jpg" alt="Image 1">
+	</div>
+
+	<!-- Desktop -->
+	<div class="text-image-section desktop">
+		<div class="text-image-section-column">
+			<div class="text-section-container">
+				<h1>The Syringe Pen</h1>
+				<p>The Syringe Pen is the coolest pen you have ever seen. It works just like a regular pen, but looks like it's a syringe full of chemicals.</p>
+			</div>
+		</div>
+		<div class="text-image-section-column">
+			<img src="./images/products/syringepen/2.jpg" alt="Image 0">
+		</div>
+	</div>
+
+	<div class="text-image-section desktop">
+		<div class="text-image-section-column">
+			<img src="./images/products/syringepen/4.jpg" alt="Image 1">
+		</div>
+		<div class="text-image-section-column">
+			<div class="text-section-container">
+				<h1>Be the coolest kid in class!</h1>
+				<p>Bring the coolest pen to school. Everyone will be amazed.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Trust Badges -->
+	<div class="trust-badges">
+		<img src="./images/trustbadges.png" alt="Trust Badges">
+	</div>
+
+
+	<!-- Customer Reviews -->
+	<div class="reviews-title">
+		<h1>Customer Reviews</h1>
+	</div>
+
+	<div class="reviews">
+
+		<div class="review">
+			<div class="review-customer">
+				<img src="./images/flags/ua_flag.png" alt="UA">
+				<h3>G***a</h3>
+			</div>
+			<div class="review-stars">
+				<i class="fa fa-star fullstar"></i>
+				<i class="fa fa-star fullstar"></i>
+				<i class="fa fa-star fullstar"></i>
+				<i class="fa fa-star fullstar"></i>
+				<i class="fa fa-star fullstar"></i>
+			</div>
+			<div class="review-text">
+				<h3>Recommending</h3>
+				<p>Looks like real syringe. I got yellow. Very nice, creative looking pen. Recommending this seller, thank you!</p>
+			</div>
+
+			<div class="review-images">
+				<div class="review-image">
+					<img class="review-image-img" src="./images/products/syringepen/reviews/1_1.PNG" onmouseover="bigReview(this)" onmouseout="smallReview(this)">
+				</div>
+			</div>
+			<div class="review-image-big hidden">
+				<img src="">
+			</div>
+		</div>
+
+		<div class="review">
+			<div class="review-customer">
+				<img src="./images/flags/mx_flag.png" alt="MX">
+				<h3>D***r</h3>
+			</div>
+			<div class="review-stars">
+				<i class="fa fa-star fullstar"></i>
+				<i class="fa fa-star fullstar"></i>
+				<i class="fa fa-star fullstar"></i>
+				<i class="fa fa-star fullstar"></i>
+				<i class="fa fa-star fullstar"></i>
+			</div>
+			<div class="review-text">
+				<h3>Very nice</h3>
+				<p>Very nice! My daughter loved them. Shipping very fast.</p>
+			</div>
+
+			<div class="review-images">
+				<div class="review-image">
+					<img class="review-image-img" src="./images/products/syringepen/reviews/2_1.PNG" onmouseover="bigReview(this)" onmouseout="smallReview(this)">
+				</div>
+			</div>
+			<div class="review-image-big hidden">
+				<img src="">
+			</div>
+		</div>
+
+	</div>
+
+	<div class="reviews-button">
+		<button class="button" id="reviews-button">View All</button>	
+	</div>
+	</div> <!-- Close large monitor div -->
+
+	<!-- Footer Section -->
+	<div class="footer-section">
+		<div class="footer-logo">
+			<img src="./images/logo.png">
+		</div>
+		<div class="footer-text">
+			<div class="footer-links">
+				<div class="footer-link">
+					<a href="tos.html" class="footer-link">Terms of Service</a>
+				</div>
+				<div class="footer-link">
+					<a href="shipping.html" class="footer-link">Shipping Policy</a>
+				</div>
+				<div class="footer-link">
+					<a href="privacy.html" class="footer-link">Privacy Policy</a>
+				</div>
+				<div class="footer-link">
+					<a href="refunds.html" class="footer-link">Refund Policy</a>
+				</div>
+			</div>
+			<div class="footer-copyright">
+				<h5>Copyright © 2022 CompanyName</h5>
+			</div>
+		</div>
+		<div class="footer-logos">
+			<img src="./images/cards.png" alt="Credit Cards">
+		</div>
+	</div>
+
+<script type="text/javascript" src=./script.js></script>
+</body>
+</html>

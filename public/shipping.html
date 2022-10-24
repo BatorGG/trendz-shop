@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+	<title>Shipping Policy - Trendz Shop</title>
+	<link rel="icon" type="image/x-icon" href="./images/favicon.png">
+    <meta charset="UTF-8">
+	<meta name="description" content="Our first page">
+	<meta name="keywords" content="html tutorial template">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="updateCart(); cartNotification();">
+
+
+	<!-- Topnav Mobile-->
+	<div class="topnav-mobile">
+		<div class="topnav-top mobile">
+			<div class="menu-opener">
+				<a href="javascript:void(0);" class="icon" onclick="showMenu(); hideCart();">&#9776;</a>
+			</div>
+			<div class="navbar-logo">
+				<img src="./images/logo.png">
+			</div>
+			<div class="cart-icon" onclick="showCart(); hideMenu();">
+				<i class="fa fa-shopping-bag bag"></i>
+				<i class="fa fa-circle cart-notification hidden"></i>
+			</div>
+		</div>
+		<div class="menu-opened hidden mobile" id="menu-opened">
+			<div class="menupoint">
+				<a href="./index.html">Home</a>
+			</div>
+			<div class="menupoint">
+				<a href="./products.html">Products</a>
+			</div>
+			<div class="menupoint">
+				<a href="./aboutus.html">About Us</a>
+			</div>
+			<div class="menupoint">
+				<a href="./faq.html">FAQ</a>
+			</div>
+			<div class="menupoint">
+				<a href="./contact.html">Contact</a>
+			</div>
+			<div class="menupoint">
+				<a href="./opportunity/index.html">Business Opportunity</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Topnav Desktop-->
+	<div class="topnav-desktop-container">
+		<div class="topnav desktop" id="topnav-id">
+			<div class="navbar-logo">
+				<img src="./images/logo.png">
+			</div>
+			<a href="./index.html">Home</a>
+			<a href="./products.html">Products</a>
+			<a href="./aboutus.html">About Us</a>
+			<a href="./faq.html">FAQ</a>
+			<a href="./contact.html">Contact</a>
+			<a href="./opportunity/index.html">Business Opportunity</a>
+			<div class="cart-icon" onclick="showCart()">
+				<i class="fa fa-shopping-bag bag"></i>
+				<i class="fa fa-circle cart-notification hidden"></i>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Cart -->
+	<div class="cart hidden" id="cart">
+
+		<div class="cart-close-container">
+			<h1>Cart</h1>
+			<div class="cart-close" onclick="showCart()">
+				<h1>X</h1>
+			</div>
+		</div>
+
+		<div class="cart-titles">
+			<h3 class="cart-title-price">Price</h3>
+			<h3 class="cart-title-quantity">Quantity</h3>
+			<h3 class="cart-title-subtotal">Subtotal</h3>
+		</div>
+
+		<div class="cart-item-container" id="cart-item-container">
+
+			<!-- Cart item here-->
+
+		</div>
+
+		<div class="cart-bottom">
+			<h2 class="cart-total-title">Total</h2>
+			<h2 class="cart-total-amount" id="cart-total-amount">$0</h2>
+			<button class="cart-proceed" id="cart-proceed">Proceed To Checkout</button>
+		</div>
+
+		<div class="coupon">
+			<form>
+				<input type="text" name="coupon" id="coupon" class="coupon-field" placeholder="Enter Coupon!">
+			</form>
+			<button class="button" id="coupon-button" onclick="checkCoupon(document.getElementById('coupon').value);">Check Coupon</button>
+		</div>
+	</div>
+	
+
+	<div class="largemonitor">
+	<div class="basicpage">
+		<h1>Shipping Policy</h1>
+		<p>All orders are shipped within 3 business days after order.</p>
+		<p>Tracking is available on some orders. Tracking ID will be emailed if available.</p>
+		<p>Shipping time differs from shipping location.</p>
+		<p>Shipping can take anywhere from 10 business days to 40 business days.</p>
+		
+		
+	</div>
+	</div>
+
+
+	<!-- Footer Section -->
+	<div class="footer-section">
+		<div class="footer-logo">
+			<img src="./images/logo.png">
+		</div>
+		<div class="footer-text">
+			<div class="footer-links">
+				<div class="footer-link">
+					<a href="tos.html" class="footer-link">Terms of Service</a>
+				</div>
+				<div class="footer-link">
+					<a href="shipping.html" class="footer-link">Shipping Policy</a>
+				</div>
+				<div class="footer-link">
+					<a href="privacy.html" class="footer-link">Privacy Policy</a>
+				</div>
+				<div class="footer-link">
+					<a href="refunds.html" class="footer-link">Refund Policy</a>
+				</div>
+			</div>
+			<div class="footer-copyright">
+				<h5>Copyright © 2022 CompanyName</h5>
+			</div>
+		</div>
+		<div class="footer-logos">
+			<img src="./images/cards.png" alt="Credit Cards">
+		</div>
+	</div>
+
+<script type="text/javascript" src=./script.js></script>
+</body>
+</html>

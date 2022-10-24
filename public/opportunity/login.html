@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Login - Trendz</title>
+</head>
+<body>
+
+
+	<!-- Topnav Mobile-->
+	<div class="topnav-mobile">
+		<div class="topnav-top mobile">
+			<div class="menu-opener">
+				<a href="javascript:void(0);" class="icon" onclick="showMenu();">&#9776;</a>
+			</div>
+			<div class="navbar-logo">
+				<img src="./images/logo.png">
+			</div>
+			<h1 class="navbar-text">XY Marketing</h1>
+
+		</div>
+		<div class="menu-opened hidden mobile" id="menu-opened">
+			<div class="menupoint">
+				<a href="./index.html">Home</a>
+			</div>
+			<div class="menupoint">
+				<a href="./apply.html">Apply</a>
+			</div>
+			<div class="menupoint">
+				<a href="./faq.html">FAQ</a>
+			</div>
+			<div class="menupoint">
+				<a href="./aboutus.html">About Us</a>
+			</div>
+			<div class="menupoint">
+				<a href="./register.html">Register</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Topnav Desktop-->
+	<div class="topnav-desktop-container">
+		<div class="topnav desktop" id="topnav-id">
+			<div class="navbar-logo">
+				<img src="./images/logo.png">
+				<h1 class="navbar-text">XY Marketing</h1>
+			</div>
+
+			
+			<div class="topnav-links-container">
+				<a href="./index.html">Home</a>
+				<a href="./apply.html">Apply</a>
+				<a href="./faq.html">FAQ</a>
+				<a href="./aboutus.html">About Us</a>
+				<a href="./register.html">Register</a>
+			</div>
+
+		</div>
+	</div>
+
+
+    <div class="login-container basicpage">
+
+        <h1>Login</h1>
+        
+        <div id="error">
+
+        </div>
+        
+        <form action="">
+            <label for="email" class="label">Email</label>
+            <br/>
+            <input class="input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@example.com"
+                value=""
+            />
+            <br/>
+
+            <label for="password" class="label">Password</label>
+            <br/>
+            <input class="input"
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter Password"
+                value=""
+            />
+            <br/>
+
+            <button type="button" class="button login-button" onclick="sendLogin();">Login</button>
+        </form>
+
+        <p>No account? <a href="./register.html" class="register-link">Register</a></p>
+
+    </div>
+    
+    <!-- Footer Section -->
+    <div class="footer-section">
+        <div class="footer-logo">
+            <img src="./images/logo.pngg">
+        </div>
+        <div class="footer-text">
+            <div class="footer-links">
+                <div class="footer-link">
+                    <a href="tos.html" class="footer-link">Terms of Service</a>
+                </div>
+                <div class="footer-link">
+                    <a href="shipping.html" class="footer-link">Shipping Policy</a>
+                </div>
+                <div class="footer-link">
+                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                </div>
+                <div class="footer-link">
+                    <a href="refunds.html" class="footer-link">Refund Policy</a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <h5>Copyright © 2022 CompanyName</h5>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript" src=./script.js></script>
+
+</body>
+</html>

@@ -1,0 +1,743 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+.link {
+	text-decoration: underline;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.desktop {
+	display: none;
+}
+
+.announcement {
+	width: 100%;
+	height: 45px;
+	background-color: DodgerBlue;
+	position: relative;
+}
+
+.announcement-text-container {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.announcement-text-container h1 {
+	font-size: 20px;
+	color: #ffffff;
+}
+
+.topnav-mobile {
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 0px;
+	z-index: 99;
+}
+
+.topnav-top {
+	width: 100%;
+	height: 65px;
+	position: relative;
+	background-color: #ffffff;
+	border-bottom: 2px solid lightgray;
+
+}
+
+.navbar-logo {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(0, -50%);
+	height: 100%;
+	width: auto;
+}
+
+.navbar-logo img {
+	height: 100%;
+	width: auto;
+}
+
+.topnav-top h1 {
+	font-size: 25px;
+}
+
+.navbar-text {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	white-space: nowrap;
+}
+
+.menu-opener {
+	height: 100%;
+	aspect-ratio: 1 / 1;
+	position: absolute;
+	left: 0;
+}
+
+.menu-opener .icon {
+	font-size: 40px;
+	color: #000000;
+}
+
+.cart-icon {
+	height: 100%;
+	aspect-ratio: 1 / 1;
+	position: absolute;
+	right: 0;
+}
+
+
+
+.menu-opened {
+	border-right: 2px solid lightgray;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	width: 80vw;
+	height: 100vh;
+	background-color: #ffffff;
+	overflow: scroll;
+}
+
+.menupoint {
+	border-bottom: 2px solid lightgray;
+	height: 65px;
+	width: 100%;
+	padding-top: 11px;
+}
+
+.menupoint a {
+	font-size: 35px;
+	margin: auto;
+}
+
+.hidden {
+	display: none !important;
+}
+
+
+/*Footer*/
+.footer-section {
+	background-color: dodgerblue;
+	color: #ffffff;
+	text-align: center;
+	padding: 20px;
+}
+
+.footer-logo {
+	height: 100px;
+	width: 200px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.footer-logo img{
+	height: 100%;
+	width: auto;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.footer-links {
+	margin: 40px;
+	margin-bottom: 30px;
+}
+
+.footer-links a {
+	color: #ffffff;
+}
+
+.footer-link {
+	margin: 20px;
+}
+
+.footer-copyright {
+	border-top: 2px solid #ffffff;
+	margin-bottom: 20px;
+	padding-top: 10px;
+}
+
+.footer-logos img {
+	width: 100%;
+	margin-top: 30px;
+}
+
+
+/* Hero Banner */
+.hero-banner {
+	height: 60vh;
+
+	background-image: url("./images/hero-banner.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+
+	position: relative;
+}
+
+.hero-banner-cover {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.2);
+	z-index: 0;
+}
+
+.hero-banner-content {
+	width: 100%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%); 
+	text-align: center;
+}
+
+.hero-banner-content h1 {
+	font-size: 20px;
+	color: #ffffff;
+}
+
+.hero-banner-content p {
+	color: #ffffff;
+}
+
+.hero-banner .button {
+	margin-top: 30px;
+}
+
+
+
+.button {
+	background-color: dodgerblue;
+	border: 2px solid rgb(10, 114, 215);
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.apply-button {
+	width: 80px;
+	height: 40px;
+	margin: 20px;
+}
+
+.payout-button {
+	height: 40px;
+	padding: 5px;
+	margin:auto !important;
+
+}
+
+.questions-button {
+
+	margin-top: 50px;
+	display: inline-block;
+	height: 30px;
+	width: 50px;
+
+}
+
+.left {
+	margin-right: 50px;
+}
+.right {
+	margin-left: 50px;
+}
+
+
+/* Text Image Section */
+.text-section {
+	text-align: center;
+	padding: 20px;
+}
+
+.text-section h1, .text-section h3, .text-section p {
+	margin: 10px;
+}
+
+.text-section h3 {
+	text-align: left;
+}
+
+.text-section p {
+	text-align: left;
+}
+
+.image-section {
+	height: 250px;
+	position: relative;
+}
+
+.image-section img {
+	height: 100% !important;
+	width: auto !important;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%); 
+}
+
+
+/*Questions*/
+.question-section {
+	height: 80vh;
+	width: 100%;
+	position: relative;
+}
+
+.question-section-content {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	width: 100%;
+
+}
+
+.apply-form {
+	margin-top: 20px;
+}
+
+input {
+	border: 1px solid dodgerblue;
+	width: 40%;
+	height: 30px;
+}
+
+.applybutton {
+	width: 40%;
+	height: 30px;
+}
+
+
+
+
+
+/* About Us Page */
+.simple-section {
+	text-align: center;
+	padding: 10px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.simple-section h1 {
+	margin-bottom: 20px;
+}
+
+
+.row {
+	display: flex;
+}
+
+.column {
+	flex: 50%;
+	position: relative;
+	padding: 10px;
+}
+
+.column h2 {
+	text-align: center;
+	padding: 5px;
+}
+
+.column-left {
+	border-right: 2px solid black;
+}
+
+.column-right {
+	border-left: 2px solid black;
+}
+
+.image-section {
+	text-align: center;
+}
+
+.image-section img {
+	width: 80%;
+	height: auto;
+}
+
+/* FAQ Page */
+.faq-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hr-line{
+    width: 80%;
+    margin: auto;
+}
+
+/* Style the buttons that are used to open and close the faq-page body */
+.faq-page {
+    /* background-color: #eee; */
+    color: #444;
+    cursor: pointer;
+    padding: 30px 20px;
+    width: 80%;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin: auto;
+}
+
+.faq-body{
+    margin: auto;
+    margin-bottom: 15px;
+    /* text-align: center; */
+   width: 70%; 
+   padding: auto;
+
+   
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.faq-page:hover {
+    background-color: #F9F9F9;
+}
+
+/* Style the faq-page panel. Note: hidden by default */
+.faq-body {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+.faq-page:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.faq-active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
+
+/* Basic Page*/
+.basicpage {
+	text-align: center;
+	padding: 10px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.basicpage h1 {
+	margin-bottom: 20px;
+}
+
+
+/* Login Page */
+.login-container {
+	width: 50%;
+	margin: auto;
+}
+
+.label {
+	text-align: left;
+	float: left;
+}
+
+.input {
+	width: 100%;
+	height: 30px;
+	float: left;
+	margin-bottom: 10px;
+}
+
+.login-button {
+	width: 50%;
+	height: 30px;
+}
+
+.register-link {
+	text-decoration: underline;
+}
+
+
+
+
+
+@media only screen and (min-width: 800px) {
+
+	.announcement {
+		width: 100%;
+		height: 35px;
+		background-color: DodgerBlue;
+		position: relative;
+	}
+
+	.mobile {
+		display: none !important;
+	}
+
+	.announcement {
+		height: 30px;
+	}
+
+	.announcement-text-container h1 {
+		font-size: 20px;
+	}
+
+	.topnav-desktop-container {
+		position: relative;
+		height: 90px;
+		z-index: 99;
+	}
+
+	.topnav {
+		background-color: #ffffff;
+		width: 100%;
+		height: 90px;
+
+		position: relative;
+		display: block;
+
+	}
+
+	.topnav-links-container {
+		height: 100%;
+		right: 0px;
+		position: absolute;
+
+		display: flex;
+		align-items: center;
+		justify-content: right;
+
+
+	}
+
+	.topnav-links-container a {
+		margin: 3vw;
+	}
+
+	.topnav-links-container a:hover {
+		color: rgb(200, 200, 200);
+	}
+
+	.navbar-logo {
+		position: absolute;
+		transform: translate(0, 0);
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: auto;
+		
+		text-align: left;
+	}
+
+	.navbar-logo img {
+		height: 100%;
+		width: auto;
+		transform: translate(0, 0);
+		left: 0px;
+		display: inline-block;
+	}
+
+	.navbar-text {
+		position:relative;
+		display: inline-block;
+		top: -35%;
+		left: 0px;
+		transform: translate(0, 0);
+
+	}
+
+
+	/* Footer */
+	.footer-text {
+		margin: 60px;
+	}
+
+	.footer-links {
+		margin: 0px;
+	}
+
+	.footer-link {
+		display: inline-block;
+		margin: 20px;
+		margin-bottom: 10px;
+	}
+
+	.footer-link a {
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.footer-copyright {
+		width: 80%;
+		margin: auto;
+
+	}
+
+	.footer-logos img {
+		width: 40vw;
+		margin-top: 30px;
+	}
+
+	.footer-logo {
+		height: 100px;
+		width: 200px;
+		margin: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		position: relative;
+	}
+	
+	.footer-logo img{
+		height: 100%;
+		width: auto;
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+
+
+
+	/* Hero Banner */
+	.hero-banner {
+		min-height: calc(0.3 * 100vw);
+		height: 75vh;
+	}
+
+	.hero-banner-content h1 {
+		font-size: 30px;
+		color: #ffffff;
+	}
+
+
+	/* Text Image Section */
+	.text-image-section {
+		height: 300px;
+		display: flex;
+	}
+
+	.text-image-section-column {
+		flex: 50%;
+		position: relative;
+	}
+
+	.text-section-container {
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+		text-align: center;
+
+	}
+
+	.text-image-section-column h1, .text-image-section-column h3, .text-image-section-column p {
+		margin: 20px;
+		text-align: left;
+	}
+
+	.text-image-section-column img {
+		height: calc(100% - 40px);
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+
+
+	/* Questions */
+	.left {
+		margin-right: 200px;
+	}
+
+	.right {
+		margin-left: 200px;
+	}
+
+	input {
+		width: 20%;
+		height: 30px;
+	}
+
+	.applybutton {
+		width: 20%;
+		height: 30px;
+	}
+
+
+	/* Otherpages */
+	.simple-section {
+		text-align: center;
+		padding: 100px;
+		padding-top: 25px;
+		padding-bottom: 35px;
+	}
+
+
+	.row {
+		width: 70%;
+		margin: auto;
+	}
+
+	.column {
+		padding: 20px;
+	}
+
+	.image-section img {
+		width: 50%;
+		height: auto;
+	}
+
+	/* Basic Page */
+	.basicpage {
+		text-align: center;
+		padding: 100px;
+		padding-top: 50px;
+		padding-bottom: 150px;
+	}
+}
+
+
+@media only screen and (min-width: 1000px) {
+	.largemonitor {
+		width: 80%;
+		margin: auto;
+	}
+}
+
+@media only screen and (min-width: 1400px) {
+	.largemonitor {
+		width: 70%;
+		margin: auto;
+	}
+}

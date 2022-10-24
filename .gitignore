@@ -1,0 +1,5 @@
+/node_modules/
+.env
+/Backups/
+stripe_backup.txt
+ToDo.txt

@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+	<title>Refund Policy - Trendz Shop</title>
+	<link rel="icon" type="image/x-icon" href="./images/favicon.png">
+    <meta charset="UTF-8">
+	<meta name="description" content="Our first page">
+	<meta name="keywords" content="html tutorial template">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="updateCart(); cartNotification();">
+
+
+	<!-- Topnav Mobile-->
+	<div class="topnav-mobile">
+		<div class="topnav-top mobile">
+			<div class="menu-opener">
+				<a href="javascript:void(0);" class="icon" onclick="showMenu(); hideCart();">&#9776;</a>
+			</div>
+			<div class="navbar-logo">
+				<img src="./images/logo.png">
+			</div>
+			<div class="cart-icon" onclick="showCart(); hideMenu();">
+				<i class="fa fa-shopping-bag bag"></i>
+				<i class="fa fa-circle cart-notification hidden"></i>
+			</div>
+		</div>
+		<div class="menu-opened hidden mobile" id="menu-opened">
+			<div class="menupoint">
+				<a href="./index.html">Home</a>
+			</div>
+			<div class="menupoint">
+				<a href="./products.html">Products</a>
+			</div>
+			<div class="menupoint">
+				<a href="./aboutus.html">About Us</a>
+			</div>
+			<div class="menupoint">
+				<a href="./faq.html">FAQ</a>
+			</div>
+			<div class="menupoint">
+				<a href="./contact.html">Contact</a>
+			</div>
+			<div class="menupoint">
+				<a href="./opportunity/index.html">Business Opportunity</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Topnav Desktop-->
+	<div class="topnav-desktop-container">
+		<div class="topnav desktop" id="topnav-id">
+			<div class="navbar-logo">
+				<img src="./images/logo.png">
+			</div>
+			<a href="./index.html">Home</a>
+			<a href="./products.html">Products</a>
+			<a href="./aboutus.html">About Us</a>
+			<a href="./faq.html">FAQ</a>
+			<a href="./contact.html">Contact</a>
+			<a href="./opportunity/index.html">Business Opportunity</a>
+			<div class="cart-icon" onclick="showCart()">
+				<i class="fa fa-shopping-bag bag"></i>
+				<i class="fa fa-circle cart-notification hidden"></i>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Cart -->
+	<div class="cart hidden" id="cart">
+
+		<div class="cart-close-container">
+			<h1>Cart</h1>
+			<div class="cart-close" onclick="showCart()">
+				<h1>X</h1>
+			</div>
+		</div>
+
+		<div class="cart-titles">
+			<h3 class="cart-title-price">Price</h3>
+			<h3 class="cart-title-quantity">Quantity</h3>
+			<h3 class="cart-title-subtotal">Subtotal</h3>
+		</div>
+
+		<div class="cart-item-container" id="cart-item-container">
+
+			<!-- Cart item here-->
+
+		</div>
+
+		<div class="cart-bottom">
+			<h2 class="cart-total-title">Total</h2>
+			<h2 class="cart-total-amount" id="cart-total-amount">$0</h2>
+			<button class="cart-proceed" id="cart-proceed">Proceed To Checkout</button>
+		</div>
+
+		<div class="coupon">
+			<form>
+				<input type="text" name="coupon" id="coupon" class="coupon-field" placeholder="Enter Coupon!">
+			</form>
+			<button class="button" id="coupon-button" onclick="checkCoupon(document.getElementById('coupon').value);">Check Coupon</button>
+		</div>
+	</div>
+	
+
+	<div class="largemonitor">
+	<div class="basicpage">
+		<h1>Refund Policy</h1>
+		<p>
+			We have a 30-day return policy, which means you have 30 days after receiving your item to request a return.
+
+			<br/>To be eligible for a return, your item must be in the same condition that you received it, unworn or unused, with tags, and in its original packaging. You’ll also need the receipt or proof of purchase.
+		
+			<br/>To start a return, you can contact us at trendz-shop@gmail.com. Please note that returns will need to be sent to an address discussed in email.
+		
+			<br/>If your return is accepted, we’ll send you a return shipping label, as well as instructions on how and where to send your package. Items sent back to us without first requesting a return will not be accepted.
+		
+			<br/>You can always contact us for any return question at trendz-shop@gmail.com.
+		
+		</p>
+		
+		
+		<h2>Damages and issues</h2>
+		<p>
+			Please inspect your order upon reception and contact us immediately if the item is defective, damaged or if you receive the wrong item, so that we can evaluate the issue and make it right.
+		</p>
+		
+		
+		<h2>Exceptions / non-returnable items</h2>
+		<p>
+			Certain types of items cannot be returned, like perishable goods (such as food, flowers, or plants), custom products (such as special orders or personalized items), and personal care goods (such as beauty products). We also do not accept returns for hazardous materials, flammable liquids, or gases. Please get in touch if you have questions or concerns about your specific item.
+		
+			<br/>
+			<br/>Unfortunately, we cannot accept returns on sale items or gift cards.
+		</p>
+		
+		
+		<h2>Exchanges</h2>
+		<p>
+			The fastest way to ensure you get what you want is to return the item you have, and once the return is accepted, make a separate purchase for the new item.
+		</p>
+		
+		
+		<h2>European Union 14 day cooling off period</h2>
+		<p>
+			Notwithstanding the above, if the merchandise is being shipped into the European Union, you have the right to cancel or return your order within 14 days, for any reason and without a justification. As above, your item must be in the same condition that you received it, unworn or unused, with tags, and in its original packaging. You’ll also need the receipt or proof of purchase.
+		</p>
+		
+		
+		<h2>Refunds</h2>
+		<p>
+			We will notify you once we’ve received and inspected your return, and let you know if the refund was approved or not. If approved, you’ll be automatically refunded on your original payment method within 10 business days. Please remember it can take some time for your bank or credit card company to process and post the refund too.
+			<br/>If more than 15 business days have passed since we’ve approved your return, please contact us at trendz-shop@gmail.com.
+		</p>
+		
+		
+	</div>
+	</div>
+
+
+	<!-- Footer Section -->
+	<div class="footer-section">
+		<div class="footer-logo">
+			<img src="./images/logo.png">
+		</div>
+		<div class="footer-text">
+			<div class="footer-links">
+				<div class="footer-link">
+					<a href="tos.html" class="footer-link">Terms of Service</a>
+				</div>
+				<div class="footer-link">
+					<a href="shipping.html" class="footer-link">Shipping Policy</a>
+				</div>
+				<div class="footer-link">
+					<a href="privacy.html" class="footer-link">Privacy Policy</a>
+				</div>
+				<div class="footer-link">
+					<a href="refunds.html" class="footer-link">Refund Policy</a>
+				</div>
+			</div>
+			<div class="footer-copyright">
+				<h5>Copyright © 2022 CompanyName</h5>
+			</div>
+		</div>
+		<div class="footer-logos">
+			<img src="./images/cards.png" alt="Credit Cards">
+		</div>
+	</div>
+
+<script type="text/javascript" src=./script.js></script>
+</body>
+</html>

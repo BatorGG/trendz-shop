@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+	<title>Diákmunka 2023</title>
+    <meta charset="UTF-8">
+	<meta name="description" content="Our first page">
+	<meta name="keywords" content="html tutorial template">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="">
+
+	<!-- Announcement Dekstop and Mobile-->
+    	<div class="announcement">
+    		<div class="announcement-text-container">
+				<h1>Diákmunka rugalmas beosztással, kezdj akár azonnal!</h1>
+			</div>
+		</div>
+
+	<!-- Topnav Mobile-->
+	<div class="topnav-mobile">
+		<div class="topnav-top mobile">
+			<div class="menu-opener">
+				<a href="javascript:void(0);" class="icon" onclick="showMenu();">&#9776;</a>
+			</div>
+			<div class="navbar-logo">
+				<img src="./images/logo.png">
+			</div>
+			<h1 class="navbar-text">Diákmunka 2023</h1>
+
+		</div>
+		<div class="menu-opened hidden mobile" id="menu-opened">
+			<div class="menupoint">
+				<a href="./index.html">Főoldal</a>
+			</div>
+			<div class="menupoint">
+				<a href="./jelentkezz.html">Jelentkezz</a>
+			</div>
+			<div class="menupoint">
+				<a href="./aboutus.html">GYIK</a>
+			</div>
+			<div class="menupoint">
+				<a href="./faq.html">Rólunk</a>
+			</div>
+			<div class="menupoint">
+				<a href="./login.html">Bejelentkezés</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Topnav Desktop-->
+	<div class="topnav-desktop-container">
+		<div class="topnav desktop" id="topnav-id">
+			<div class="navbar-logo">
+				<img src="./images/logo.png">
+				<h1 class="navbar-text">Diákmunka 2023</h1>
+			</div>
+
+			
+			<div class="topnav-links-container">
+				<a href="./index.html">Főoldal</a>
+				<a href="./jelentkezz.html">Jelentkezz</a>
+				<a href="./aboutus.html">GYIK</a>
+				<a href="./faq.html">Rólunk</a>
+				<a href="./login.html">Bejelentkezés</a>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div id="question1" class="question-section">
+		<div class="question-section-content">
+			<h1>Diákmunka után érdeklődsz?</h1>
+			<button id="no" class="button questions-button left" onclick="location.href = './index.html'">Nem</button>
+			<button id="yes" class="button questions-button righ" onclick="nextQuestion(1)">Igen</button>
+		</div>
+	</div>
+
+	<div id="question2" class="question-section hidden">
+		<div class="question-section-content">
+			<h1>Érdekel az értékesítés, a marketing, vagy az emberi kapcsolatok?</h1>
+			<button id="no" class="button questions-button left" onclick="nextQuestion(2)">Nem</button>
+			<button id="yes" class="button questions-button righ" onclick="nextQuestion(2)">Igen</button>
+		</div>
+	</div>
+
+	<div id="question3" class="question-section hidden">
+		<div class="question-section-content">
+			<h1>Örülnél rugalmas munkabeosztásnak?</h1>
+			<button id="no" class="button questions-button left" onclick="nextQuestion(3)">Nem</button>
+			<button id="yes" class="button questions-button righ" onclick="nextQuestion(3)">Igen</button>
+		</div>
+	</div>
+
+	<div id="question4" class="question-section hidden">
+		<div class="question-section-content">
+			<h1>Szeretnél tapasztalatot gyűteni miközben dolgozol?</h1>
+			<p>(A munkabáalláshoz nem szükséges előzetes tapasztalat.)</p>
+			<button id="no" class="button questions-button left" onclick="nextQuestion(4)">Nem</button>
+			<button id="yes" class="button questions-button righ" onclick="nextQuestion(4)">Igen</button>
+		</div>
+	</div>
+
+	<div id="question5" class="question-section hidden">
+		<div class="question-section-content">
+			<h1>Örülnél ha munkád alatt passzív jövedelmet is ki tudnál építeni?</h1>
+			<button id="no" class="button questions-button left" onclick="nextQuestion(5)">Nem</button>
+			<button id="yes" class="button questions-button righ" onclick="nextQuestion(5)">Igen</button>
+		</div>
+	</div>
+
+	<div id="question6" class="question-section hidden">
+		<div class="question-section-content">
+			<h1>Szívesen dolgoznál egy lelkes csapat tagjaként?</h1>
+			<button id="no" class="button questions-button left" onclick="location.href = './index.html'">Nem</button>
+			<button id="yes" class="button questions-button righ" onclick="location.href = './index.html'">Igen</button>
+		</div>
+	</div>
+
+
+	<!--
+	<div class="basicpage">
+		<h1>Contact</h1>
+		<p>businessemail@website.com</p>
+	</div>
+	-->
+
+
+	<!-- Footer Section -->
+	<div class="footer-section">
+		<div class="footer-logo">
+			<img src="./images/logo.png">
+		</div>
+		<div class="footer-text">
+			<div class="footer-links">
+				<div class="footer-link">
+					<a href="tos.html" class="footer-link">Terms of Service</a>
+				</div>
+				<div class="footer-link">
+					<a href="shipping.html" class="footer-link">Shipping Policy</a>
+				</div>
+				<div class="footer-link">
+					<a href="privacy.html" class="footer-link">Privacy Policy</a>
+				</div>
+				<div class="footer-link">
+					<a href="refunds.html" class="footer-link">Refund Policy</a>
+				</div>
+			</div>
+			<div class="footer-copyright">
+				<h5>Copyright © 2022 CompanyName</h5>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript" src=./script.js></script>
+</body>
+</html>
