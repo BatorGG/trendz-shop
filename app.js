@@ -210,7 +210,9 @@ app.post("/create-checkout-session", async (req, res) => {
 // Give commission
 app.post("/give-commission", async (req, res) => {
 	var commission = 0.1;
+    var downlineCommission = 0.25;
 	var msg = "";
+    var updatedUsers = [];
 
 	if (typeof req.body.id != "undefined" && req.body.id != "" && req.body.id != null){
 		var session = await stripe.checkout.sessions.retrieve(
@@ -226,6 +228,7 @@ app.post("/give-commission", async (req, res) => {
 				total += storeItems.get(req.body.items[i].id)["priceInCents"];
 			}
 
+      var commissionAmount = total * commission
 		
 		
 
@@ -233,13 +236,33 @@ app.post("/give-commission", async (req, res) => {
 
 			if (user) {
 				var filter = { couponCode: req.body.coupon };
-				var update = { balanceInCents: Math.round(user.balanceInCents + (total*commission)) };
+				var update = { balanceInCents: Math.round(user.balanceInCents + commissionAmount) };
 				var updated = await User.findOneAndUpdate(filter, update, {
            			new: true
           		});
+                
+                updatedUsers.push(updated);
 
-				console.log(updated);
-				msg = updated; 
+                while (user) {
+                    var searchFor = user.invitedBy;
+                    user = await User.findOne({ couponCode: searchFor});
+
+                    if (user) {
+
+                        commissionAmount = commissionAmount*downlineCommission;
+
+                        var filter = { couponCode: searchFor };
+                        var update = { balanceInCents: Math.round(user.balanceInCents + commissionAmount) };
+                        var updated = await User.findOneAndUpdate(filter, update, {
+                            new: true
+                        });
+
+                        updatedUsers.push(updated);
+                    }
+                }
+
+                console.log(updatedUsers);
+                msg = updatedUsers;
 			}
 
 			
