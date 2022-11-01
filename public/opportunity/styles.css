@@ -10,7 +10,7 @@ a {
 }
 
 .link {
-	text-decoration: underline;
+	text-decoration: underline !important;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -147,6 +147,7 @@ input[type=number] {
 	color: #ffffff;
 	text-align: center;
 	padding: 20px;
+	margin-top: 50px;
 }
 
 .footer-logo {
@@ -462,6 +463,20 @@ input {
 
 .basicpage h1 {
 	margin-bottom: 20px;
+}
+
+.guides-page {
+	text-align: left;
+	padding: 20px;
+}
+
+.guides-page h1 {
+	margin-bottom: 20px;
+}
+
+.guides-page p {
+	margin: 10px;
+	margin-left: 0px;
 }
 
 
