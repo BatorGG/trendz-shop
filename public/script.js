@@ -44,6 +44,11 @@ var storeItems = [
 		id: 9,
 		name: "2 in 1 Screen Clenaer (Pink)",
 		priceInCents: 1499,
+	},
+	{
+		id: 10,
+		name: "High-Security Door Alarm",
+		priceInCents: 2999,
 	}
 ];
 
@@ -58,8 +63,12 @@ function addToCart(x, name){
 	}
 
 
-
-	var size = x.parentNode.children[2].children[0].children[0].value;
+	try {
+		var size = x.parentNode.children[2].children[0].children[0].value;
+	} catch {
+		var size;
+	}
+	
 	var amount = parseInt(x.parentNode.children[3].children[1].value);
 	var itemId;
 	if (name == "Self Cleaning Hairbrush"){
@@ -81,6 +90,11 @@ function addToCart(x, name){
 		var imgUrl = "products/screen_cleaner/2.jpg";
 		if (size == "Black") itemId = 8;
 		if (size == "Pink") itemId = 9;
+	}
+
+	if (name == "Alarm"){
+		var imgUrl = "products/alarm/1.jpg";
+		itemId = 10;
 	}
 
 	if (size == "select"){

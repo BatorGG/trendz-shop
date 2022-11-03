@@ -80,13 +80,14 @@ const storeItems = new Map([
     [6, { priceInCents: 999, name: "Syringe Pen (Green)"}],
     [7, { priceInCents: 999, name: "Syringe Pen (Blue)"}],
     [8, { priceInCents: 1499, name: "2 in 1 Screen Cleaner (Black)"}],
-    [9, { priceInCents: 1499, name: "2 in 1 Screen Cleaner (Pink)"}]
+    [9, { priceInCents: 1499, name: "2 in 1 Screen Cleaner (Pink)"}],
+    [10, { priceInCents: 2999, name: "High-Security Door Alarm"}]
 ]);
 
 
 
 // Coupon codes
-const coupons = ["10OFF", "20OFF"];
+const coupons = ["10OFF", "20OFF", "TIKTOK"];
 
 app.post("/validate-coupon", async (req, res) => {
   var coupon = req.body.coupon.toUpperCase();

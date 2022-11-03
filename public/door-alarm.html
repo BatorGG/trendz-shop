@@ -1,12 +1,11 @@
 <!doctype html>
 <html>
 <head>
-	<title>Trendz Shop</title>
+	<title>Door Alarm - Trendz Shop</title>
 	<link rel="icon" type="image/x-icon" href="./images/favicon.png">
-    <meta charset="UTF-8">
 	<meta name="description" content="Our first page">
 	<meta name="keywords" content="html tutorial template">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -93,19 +92,7 @@
 
 		<div class="cart-item-container" id="cart-item-container">
 
-			<!-- Cart Item
-			<div class="cart-item">
-				<div class="cart-item-item">
-					<img src="./images/0.jpg" alt="Image 0">
-					<h4>Tire Thingy</h4>
-					<button class="cart-item-remove" onclick="removeFromCart(this)">Remove</button>
-				</div>
-				<h4 class="cart-item-price">$29.99</h4>
-				<input type="number" name="quantity" value="1" class="cart-item-quantity">
-				<h4 class="cart-item-subtotal">= $29.99</h4>
-			</div>
-			-->
-
+			<!-- Cart item here-->
 
 		</div>
 
@@ -123,56 +110,12 @@
 		</div>
 	</div>
 
-	<!-- Hero Banner -->
-	<div class="hero-banner">
-		<div class="hero-banner-cover">
-		</div>
-		<div class="hero-banner-content">
-			<h1>Trendz Shop</h1>
-			<p>Bringing you the coolest top trending products!</p>
-			<button id="shop-now" class="button" onclick="scrollToProduct()">Shop Now!</button>
-		</div>
-	</div>
-
-	<!-- Mobile -->
-	<div class="text-section mobile">
-		<h1>Exclusive Product Drops</h1>
-		<p>Trendz Shop brings you the best product drops you can't find anywhere else. Every product is only available for a limited time!</p>
-	</div>
-	<div class="image-section mobile">
-		<img src="./images/tiktokplus.PNG" alt="Image 0">
-	</div>
-
 
 	<div class="largemonitor">
-	<!-- Desktop -->
-	<div class="text-image-section desktop">
-		<div class="text-image-section-column">
-			<div class="text-section-container">
-				<h1>Exclusive Product Drops</h1>
-				<p>Trendz Shop brings you the best product drops you can't find anywhere else. Every product is only available for a limited time!</p>
-			</div>
-		</div>
-		<div class="text-image-section-column">
-			<img src="./images/tiktokplus.PNG" alt="Image 0">
-		</div>
-	</div>
-
-	<div class="simple-section">
-		<h1>Latest Product:</h1>
-	</div>
-
-
 	<!-- Home Product Mobile -->
 	<div class="home-product mobile">
-		<div class="home-product-title-desc">
+		<div class="productpage-product-title">
 			<h1>High-Security Door Alarm</h1>
-			<p>A high security alarm to detect and stop intruders from opening your doors.</p>
-			<a href="./door-alarm.html">Learn More</a>
-		</div>
-		<div class="home-product-prices">
-			<h2 class="original-price">$59.99</h2>
-			<h1 class="discounted-price">$29.99</h1>
 		</div>
 		<div class="home-product-images mobile">
 			<div class="home-product-large-image">
@@ -199,22 +142,15 @@
 
 		<div class="home-product-other">
 			<div></div>
-			<div></div>
-			<!-- So we have the same amount of elements as on desktop -->
-			<!--
-			<div class="custom-select-container">
-				<div class="custom-select">
-					<select name="color" id="color">
-						<option value="select">Color</option>
-						<option value="Black">Black</option>
-						<option value="Pink">Pink</option>
-					</select>
-				</div>
+			<!-- So we have tha same amount of elements as in desktop -->
+			<div class="productpage-prices">
+				<h2 class="original-price">$59.99</h2>
+				<h1 class="discounted-price">$29.99</h1>
 			</div>
-			-->
+
 			<div></div>
 
-			<div class="amount-div">
+			<div id="amount-div" class="amount-div">
 				<button id="minus-mobile">-</button><!--
 				--><input type="number" id="numberPlace-mobile" name="amount" value="1" class="amount-form"><!--
 				--><button id="plus-mobile">+</button>
@@ -229,7 +165,7 @@
 	</div>
 
 	<!-- Home Product Destop -->
-	<div class="home-product desktop">
+	<div class="productpage-product desktop">
 		<div class="home-product-column">
 			<div class="home-product-images">
 				<div class="home-product-large-image">
@@ -255,30 +191,17 @@
 			</div>
 		</div>
 		<div class="home-product-column">
-			<div class="home-product-title-desc">
+			<div class="productpage-product-title">
 				<h1>High-Security Door Alarm</h1>
-				<p>A high security alarm to detect and stop intruders from opening your doors.</p>
-				<a href="./door-alarm.html">Learn More</a>
 			</div>
-			<div class="home-product-prices">
+			<div class="productpage-prices">
 				<h2 class="original-price">$59.99</h2>
 				<h1 class="discounted-price">$29.99</h1>
 			</div>
 
-			<!--
-			<div class="custom-select-container">
-				<div class="custom-select">
-					<select name="color" id="color">
-						<option value="select">Color</option>
-						<option value="Black">Black</option>
-						<option value="Pink">Pink</option>
-					</select>
-				</div>
-			</div>
-			-->
 			<div></div>
 
-			<div class="amount-div">
+			<div id="amount-div" class="amount-div">
 				<button id="minus">-</button><!--
 				--><input type="number" id="numberPlace" name="amount" value="1" class="amount-form"><!--
 				--><button id="plus">+</button>
@@ -292,41 +215,56 @@
 		</div>
 	</div>
 
+
+
+	<!-- Mobile -->
+	<div class="text-section mobile">
+		<h1>Improve your home security!</h1>
+		<p>Improve your home security with our high-security door alarm. Place it in front of any door and a loud alarm will go off as soon as someone tries to open the door.</p>	
+	</div>
+	<div class="image-section mobile">
+		<img src="./images/products/alarm/2.jpg" alt="Image 0">
+	</div>
+
+	<div class="text-section mobile">
+		<h1>Works on any door or window</h1>
+		<p>The door alarm works on any type of door or even windows. You can stick the alarm onto the door or window and it will go off to any movement. You can chose between 3 sensitivity levels.</p>	
+	</div>
+	<div class="image-section mobile">
+		<img src="./images/products/alarm/8.jpg" alt="Image 1">
+	</div>
+
+	<!-- Desktop -->
+	<div class="text-image-section desktop">
+		<div class="text-image-section-column">
+			<div class="text-section-container">
+				<h1>Improve your home security!</h1>
+				<p>Improve your home security with our high-security door alarm. Place it in front of any door and a loud alarm will go off as soon as someone tries to open the door.</p>
+			</div>
+		</div>
+		<div class="text-image-section-column">
+			<img src="./images/products/alarm/2.jpg" alt="Image 0">
+		</div>
+	</div>
+
+	<div class="text-image-section desktop">
+		<div class="text-image-section-column">
+			<img src="./images/products/alarm/8.jpg" alt="Image 1">
+		</div>
+		<div class="text-image-section-column">
+			<div class="text-section-container">
+				<h1>Works on any door or window</h1>
+				<p>The door alarm works on any type of door or even windows. You can stick the alarm onto the door or window and it will go off to any movement. You can chose between 3 sensitivity levels.</p>
+			</div>
+		</div>
+	</div>
+
 	<!-- Trust Badges -->
 	<div class="trust-badges">
 		<img src="./images/trustbadges.png" alt="Trust Badges">
 	</div>
 
 
-	<div class="best-selling">
-		
-		<h1>Top Trending</h1>
-
-		<div class="best-selling-container">
-
-			<a href="./door-alarm.html" class="product-container best-selling-product">
-				<img src="./images/products/alarm/1.jpg">
-				<h2>High-Security Door Alarm</h2>
-				<h3>$29.99 <span class="discounted-product-price">$59.99</span></h3>
-			</a>
-
-			<a href="./screen-cleaner.html" class="product-container best-selling-product">
-				<img src="./images/products/screen_cleaner/2.jpg">
-				<h2>2 in 1 Screen Cleaner</h2>
-				<h3>$14.99 <span class="discounted-product-price">$29.99</span></h3>
-			</a>
-			
-			<a href="./hairbrush.html" class="product-container best-selling-product">
-				<img src="./images/products/hairbrush/3.jpg">
-				<h2>Self Cleaning Hairbrush</h2>
-				<h3>$29.99 <span class="discounted-product-price">$59.99</span></h3>
-			</a>
-
-		</div>
-		
-	</div>
-
-	
 	<!-- Customer Reviews -->
 	<div class="reviews-title">
 		<h1>Customer Reviews</h1>
@@ -433,13 +371,11 @@
 		</div>
 
 	</div>
-	
-		<div class="reviews-button">
-			<button class="button" id="reviews-button">View All</button>		
-		</div>
 
-	</div> <!-- Large monitro div close-->
-
+	<div class="reviews-button">
+		<button class="button" id="reviews-button">View All</button>	
+	</div>
+	</div> <!-- Close large monitor div -->
 
 	<!-- Footer Section -->
 	<div class="footer-section">
