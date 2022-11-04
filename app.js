@@ -195,6 +195,9 @@ app.post("/create-checkout-session", async (req, res) => {
                 }
                 
             }),
+            phone_number_collection: {
+              enabled: true,
+            },
             success_url: `${process.env.SERVER_URL}success.html`,
             cancel_url: `${process.env.SERVER_URL}`
         });
