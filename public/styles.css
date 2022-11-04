@@ -465,7 +465,7 @@ input[type=number] {
 }
 
 .original-price {
-	color: darkred;
+	color: #ff0050;
 	text-decoration: line-through;
 }
 
@@ -474,7 +474,7 @@ input[type=number] {
 }
 
 .discounted-price {
-	color: green;
+	color: #00e6de;
 }
 
 .home-product-images {
@@ -634,7 +634,7 @@ input[type=number] {
 
 
 #minus-mobile:hover , #plus-mobile:hover{
-    background-color:red;    
+    background-color:#ff0050;    
     border:none;
 	z-index: 1;
 	cursor: pointer;

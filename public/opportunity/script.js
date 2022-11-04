@@ -95,6 +95,12 @@ async function getUserData() {
 }
 
 
+//Withdraw function
+function withdrawFunction() {
+    alert("Minimum withdrawal amount: $10");
+}
+
+
 // Stripe Checkout
 function startCheckout(){
     console.log("Creating checkout!");
