@@ -479,7 +479,10 @@ input[type=number] {
 
 .home-product-images {
 	width: 100%;
+	height: auto;
 	aspect-ratio: 1 / 1;
+	max-height: 1000px;
+
 }
 
 .home-product-large-image {
@@ -497,15 +500,22 @@ input[type=number] {
 
 .home-product-small-images {
 	width: 80%;
-	height: 15%;
+
+	max-height: 1000px;
+	display: flex;
+	flex-wrap: wrap;
 	margin: auto;
 	margin-top: 2%;
 }
 
 .home-product-small-image {
 
+	/*
 	height: 100%;
-	aspect-ratio:  1 / 1;
+	aspect-ratio:  1 / 1;*/
+	width: 20%;
+	height: auto;
+	aspet-ratio: 1 / 1;
 
 	float: left;
 }
