@@ -871,3 +871,92 @@ try {
 	//console.error(error);
 	console.log(" ");
 }
+
+
+
+//Swipe on images
+document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
+
+var xDown = null;                                                        
+var yDown = null;
+var onImage = false;
+var currentImg = 0;
+var imgUrls = [];
+
+function getTouches(evt) {
+  return evt.touches ||             // browser API
+         evt.originalEvent.touches; // jQuery
+}                                                     
+                                                                         
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;        
+	if (evt.target.id == "main-image-mobile"){
+		onImage = true;
+
+		imgUrls = [];
+	
+		for (var i = 0; i < evt.target.parentNode.parentNode.children[1].children.length; i++) {
+			var element = evt.target.parentNode.parentNode.children[1].children[i];
+			imgUrls.push(element.children[0].src);
+		}
+	}          
+	else {
+		onImage = false;
+	}
+
+	
+
+};                                                
+                                                                         
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+                                                                         
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( xDiff > 0 ) {
+            /* right swipe */ 
+			if (onImage) {
+
+				currentImg++;
+				if (currentImg > imgUrls.length - 1){
+					currentImg = 0;
+				}
+
+				evt.target.src = imgUrls[currentImg];
+			}
+			
+        }
+		else {
+			/* left swipe */
+			if (onImage) {
+
+				currentImg--;
+				if (currentImg < 0){
+					currentImg = imgUrls.length - 1;
+				}
+
+				evt.target.src = imgUrls[currentImg];
+			}
+        }                       
+    }
+	else {
+        if ( yDiff > 0 ) {
+            /* down swipe */ 
+        } else { 
+            /* up swipe */
+        }                                                                 
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;                                             
+};
