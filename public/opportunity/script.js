@@ -68,22 +68,24 @@ async function sendLogin() {
 async function getUserData() {
     console.log("Getting user data");
 
+    var userData = JSON.parse(sessionStorage.getItem("userData"));
+
     var user = await fetch("/getuser", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-             
-        })
+        body: JSON.stringify(
+            userData
+            );
     }).then(res => {
         if (res.ok) return res.json();
         return res.json().then(json => Promise.reject(json))
     });
-    
-    console.log(user);
 
     if (user.success) {
+        sessionStorage.setItem("userData", JSON.stringify(user.user));
+
         console.log(user);
         document.getElementById("name").textContent = "Welcome " + user.name + "!";
         document.getElementById("invitedBy").textContent = user.invitedBy;

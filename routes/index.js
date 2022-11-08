@@ -22,17 +22,7 @@ router.post("/getuser", (req, res) => {
     if (req.isAuthenticated()) {
         res.json({
             success: true,
-            name: req.user.name,
-            invitedBy: req.user.invitedBy,
-            couponCode: req.user.couponCode,
-            couponCodeEnabled: req.user.couponCodeEnabled,
-            balanceInCents: req.user.balanceInCents,
-            subscriptionId: req.user.subscriptionId
-        })
-    }
-    else if (true) {
-        res.json({
-            success: true,
+            user: req.user,
             name: req.user.name,
             invitedBy: req.user.invitedBy,
             couponCode: req.user.couponCode,
@@ -42,9 +32,25 @@ router.post("/getuser", (req, res) => {
         })
     }
     else {
-        res.json({
-            success: false
-        })
+        var userData = req.userData;
+
+        if (userData && userData != "" && typeof userData != "undefined" && userData != null) {
+            res.json({
+                success: true,
+                user: userData.userData,
+                name: userData.name,
+                invitedBy: userData.invitedBy,
+                couponCode: userData.couponCode,
+                couponCodeEnabled: userData.couponCodeEnabled,
+                balanceInCents: userData.balanceInCents,
+                subscriptionId: userData.subscriptionId
+            })
+        }
+        else {
+            res.json({
+                success: false
+            })
+        }
     }
 
 });
