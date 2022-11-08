@@ -67,6 +67,7 @@ async function sendLogin() {
 
 async function getUserData() {
     console.log("Getting user data");
+    console.log("other console log");
 
     var userData = JSON.parse(sessionStorage.getItem("userData"));
     console.log("UserData: " + userData);
@@ -100,7 +101,7 @@ async function getUserData() {
     else {
         console.log("User: " + user);
         console.timeLog("Redirecting.")
-        window.location.href = "./login.html";
+        //window.location.href = "./login.html";
     }
 }
 
