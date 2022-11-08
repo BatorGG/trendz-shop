@@ -66,7 +66,7 @@ async function sendLogin() {
 
 
 async function getUserData() {
-    console.log("Getting user data");
+    console.log("Getting user data hello");
     console.log("other console log");
 
     var userData = JSON.parse(sessionStorage.getItem("userData"));
