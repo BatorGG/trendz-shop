@@ -29,7 +29,7 @@ const connectDatabase = async () => {
       } catch (error) {
         console.log(error);
         //process.exit(1);
-        setTimeout(connectDatabase, 60*1000);
+        setTimeout(connectDatabase, 1000);
       }
 }
 
