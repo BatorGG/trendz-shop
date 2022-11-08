@@ -121,7 +121,7 @@ app.post("/create-checkout-session", async (req, res) => {
             payment_method_types: ["card"],
             mode: "payment",
             shipping_address_collection: {
-                allowed_countries: ['US', 'HU'],
+                allowed_countries: ["US", "BR", "RU", "MX", "JP", "VN", "TR", "DE", "TH", "FR", "IT", "KR", "ES", "PL", "UA", "CA", "SA", "MY", "AU", "BE", "SE", "GR", "PT", "HU", "IL", "AT", "CH", "HK", "SG", "DK", "FI", "NO", "NZ", "IE", "HR", "LT", "LV", "EE", "LU", "MT", ],
             },
             shipping_options: [
               {
