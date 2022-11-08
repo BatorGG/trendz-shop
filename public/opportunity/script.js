@@ -70,6 +70,7 @@ async function getUserData() {
 
     var userData = JSON.parse(sessionStorage.getItem("userData"));
     console.log("UserData: " + userData);
+    console.log("Userdata pritned");
 
     var user = await fetch("/getuser", {
         method: "POST",
@@ -208,6 +209,8 @@ function logOut(){
     }).catch(e => {
         console.error(e.error);
     })
+
+    sessionStorage.setItem("userData", "");
 
 }
 
