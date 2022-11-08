@@ -28,7 +28,8 @@ const connectDatabase = async () => {
         console.log("MongoDB connected...");
       } catch (error) {
         console.log(error);
-        process.exit(1);
+        //process.exit(1);
+        setTimeout(connectDatabase, 60*1000);
       }
 }
 
@@ -132,11 +133,10 @@ app.post("/create-checkout-session", async (req, res) => {
                     currency: 'usd',
                   },
                   display_name: 'Free Shipping',
-                  // Delivers between 5-7 business days
                   delivery_estimate: {
                     minimum: {
                       unit: 'business_day',
-                      value: 14,
+                      value: 7,
                     },
                     maximum: {
                       unit: 'business_day',
@@ -144,28 +144,7 @@ app.post("/create-checkout-session", async (req, res) => {
                     },
                   }
                 }
-              },
-              {
-                shipping_rate_data: {
-                  type: 'fixed_amount',
-                  fixed_amount: {
-                    amount: 1500,
-                    currency: 'usd',
-                  },
-                  display_name: 'Priority',
-                  // Delivers in exactly 1 business day
-                  delivery_estimate: {
-                    minimum: {
-                      unit: 'business_day',
-                      value: 6,
-                    },
-                    maximum: {
-                      unit: 'business_day',
-                      value: 12,
-                    },
-                  }
-                }
-              },
+              }
             ],
             line_items: req.body.items.map(item => {
                 const storeItem = storeItems.get(item.id);
