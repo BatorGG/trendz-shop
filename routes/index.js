@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
 });
 
 // Dashboard Redirect
-router.get("/dashboard", ensureAuthenticated, (req, res) => {
+router.get("/dashboard", (req, res) => {
     res.json({
         success: true,
         error: ""
