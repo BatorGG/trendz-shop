@@ -69,6 +69,7 @@ async function getUserData() {
     console.log("Getting user data");
 
     var userData = JSON.parse(sessionStorage.getItem("userData"));
+    console.log(userData);
 
     var user = await fetch("/getuser", {
         method: "POST",
@@ -83,6 +84,8 @@ async function getUserData() {
         return res.json().then(json => Promise.reject(json))
     });
 
+    console.log(user);
+    
     if (user.success) {
         sessionStorage.setItem("userData", JSON.stringify(user.user));
 
