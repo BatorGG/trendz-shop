@@ -14,13 +14,6 @@ router.get("/dashboard", ensureAuthenticated, (req, res) => {
         success: true,
         error: ""
     })
-    /*
-    res.render("dashboard", {
-        name: req.user.name,
-        invitedBy: req.user.invitedBy,
-        couponCode: req.user.couponCode,
-        balanceInCents: req.user.balanceInCents
-    });*/
 });
 
 // Dashboard
@@ -36,6 +29,9 @@ router.post("/getuser", (req, res) => {
             balanceInCents: req.user.balanceInCents,
             subscriptionId: req.user.subscriptionId
         })
+    }
+    else if (true) {
+        console.log(req.user);
     }
     else {
         res.json({
