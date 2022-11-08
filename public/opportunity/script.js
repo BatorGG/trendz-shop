@@ -66,32 +66,23 @@ async function sendLogin() {
 
 
 async function getUserData() {
-    console.log("Getting user data hello");
-    console.log("other console log");
-
-    var userData = JSON.parse(sessionStorage.getItem("userData"));
-    console.log("UserData: " + userData);
-    console.log("Userdata pritned");
+    console.log("Getting user data");
 
     var user = await fetch("/getuser", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(
-             userData
-            )
+        body: JSON.stringify({
+             
+        })
     }).then(res => {
         if (res.ok) return res.json();
         return res.json().then(json => Promise.reject(json))
     });
 
-    
-    
     if (user.success) {
-        sessionStorage.setItem("userData", JSON.stringify(user.user));
-
-        console.log("USer:" + user);
+        console.log(user);
         document.getElementById("name").textContent = "Welcome " + user.name + "!";
         document.getElementById("invitedBy").textContent = user.invitedBy;
         document.getElementById("couponCode").textContent = user.couponCode;
@@ -99,9 +90,7 @@ async function getUserData() {
 
     }
     else {
-        console.log("User: " + user);
-        console.timeLog("Redirecting.")
-        //window.location.href = "./login.html";
+        window.location.href = "./login.html";
     }
 }
 
@@ -178,7 +167,7 @@ function checkSubscription(){
         if (res.ok) return res.json();
         return res.json().then(json => Promise.reject(json))
     }).then(({ status }) => {
-
+        console.log(status);
         if (!status) {
             document.getElementsByClassName("container")[0].innerHTML += "<br/><p>Your coupon code is currently disabled. Please pay the monthly membership fee to enable it!</p> <br/> <button onclick='startCheckout();'>Pay Membership Fee</button>";
         }
@@ -210,8 +199,6 @@ function logOut(){
     }).catch(e => {
         console.error(e.error);
     })
-
-    sessionStorage.setItem("userData", "");
 
 }
 

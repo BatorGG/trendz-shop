@@ -9,11 +9,18 @@ router.get("/", (req, res) => {
 });
 
 // Dashboard Redirect
-router.get("/dashboard", (req, res) => {
+router.get("/dashboard", ensureAuthenticated, (req, res) => {
     res.json({
         success: true,
         error: ""
     })
+    /*
+    res.render("dashboard", {
+        name: req.user.name,
+        invitedBy: req.user.invitedBy,
+        couponCode: req.user.couponCode,
+        balanceInCents: req.user.balanceInCents
+    });*/
 });
 
 // Dashboard
@@ -22,7 +29,6 @@ router.post("/getuser", (req, res) => {
     if (req.isAuthenticated()) {
         res.json({
             success: true,
-            user: req.user,
             name: req.user.name,
             invitedBy: req.user.invitedBy,
             couponCode: req.user.couponCode,
@@ -32,25 +38,9 @@ router.post("/getuser", (req, res) => {
         })
     }
     else {
-        var userData = req.userData;
-
-        if (userData && userData != "" && typeof userData != "undefined" && userData != null) {
-            res.json({
-                success: true,
-                user: userData.userData,
-                name: userData.name,
-                invitedBy: userData.invitedBy,
-                couponCode: userData.couponCode,
-                couponCodeEnabled: userData.couponCodeEnabled,
-                balanceInCents: userData.balanceInCents,
-                subscriptionId: userData.subscriptionId
-            })
-        }
-        else {
-            res.json({
-                success: false
-            })
-        }
+        res.json({
+            success: false
+        })
     }
 
 });
