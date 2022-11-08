@@ -31,7 +31,15 @@ router.post("/getuser", (req, res) => {
         })
     }
     else if (true) {
-        console.log(req.user);
+        res.json({
+            success: true,
+            name: req.user.name,
+            invitedBy: req.user.invitedBy,
+            couponCode: req.user.couponCode,
+            couponCodeEnabled: req.user.couponCodeEnabled,
+            balanceInCents: req.user.balanceInCents,
+            subscriptionId: req.user.subscriptionId
+        })
     }
     else {
         res.json({
