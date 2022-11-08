@@ -320,6 +320,8 @@ button.addEventListener("click", () => {
     
 	if (cartItems.length > 0){
 
+		button.textContent = "Please Wait...";
+
 		fetch("/create-checkout-session", {
 			method: "POST",
 			headers: {
