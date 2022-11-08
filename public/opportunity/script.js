@@ -80,6 +80,8 @@ async function getUserData() {
         if (res.ok) return res.json();
         return res.json().then(json => Promise.reject(json))
     });
+    
+    console.log(user);
 
     if (user.success) {
         console.log(user);
