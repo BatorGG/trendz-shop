@@ -69,7 +69,7 @@ async function getUserData() {
     console.log("Getting user data");
 
     var userData = JSON.parse(sessionStorage.getItem("userData"));
-    console.log(userData);
+    console.log("UserData: " + userData);
 
     var user = await fetch("/getuser", {
         method: "POST",
@@ -84,12 +84,12 @@ async function getUserData() {
         return res.json().then(json => Promise.reject(json))
     });
 
-    console.log(user);
+    
     
     if (user.success) {
         sessionStorage.setItem("userData", JSON.stringify(user.user));
 
-        console.log(user);
+        console.log("USer:" + user);
         document.getElementById("name").textContent = "Welcome " + user.name + "!";
         document.getElementById("invitedBy").textContent = user.invitedBy;
         document.getElementById("couponCode").textContent = user.couponCode;
@@ -97,6 +97,8 @@ async function getUserData() {
 
     }
     else {
+        console.log("User: " + user);
+        console.timeLog("Redirecting.")
         window.location.href = "./login.html";
     }
 }
@@ -174,7 +176,7 @@ function checkSubscription(){
         if (res.ok) return res.json();
         return res.json().then(json => Promise.reject(json))
     }).then(({ status }) => {
-        console.log(status);
+
         if (!status) {
             document.getElementsByClassName("container")[0].innerHTML += "<br/><p>Your coupon code is currently disabled. Please pay the monthly membership fee to enable it!</p> <br/> <button onclick='startCheckout();'>Pay Membership Fee</button>";
         }
