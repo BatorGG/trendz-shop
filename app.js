@@ -416,7 +416,7 @@ app.post("/send-application", async (req, res) => {
 setInterval(() => {
   http.get("http://www.trendz-shop.com/");
   console.log("Awaken!");
-}, 10 * 60 * 1000); // every 10 minutes
+}, 5 * 60 * 1000); // every 5 minutes
 
 
 const PORT = process.env.PORT || 5000;
