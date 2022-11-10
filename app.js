@@ -6,6 +6,7 @@ const session = require("express-session");
 const passport = require("passport");
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 const path = require("path");
+const http = require("http");
 
 const app = express();
 
@@ -410,8 +411,14 @@ app.post("/send-application", async (req, res) => {
   }
 });
 
+
+//Keep awake
+setInterval(() => {
+  http.get("http://www.trendz-shop.com/");
+  console.log("Awaken!");
+}, 25 * 60 * 1000); // every 25 minutes
+
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));
-
-module.exports = app;
