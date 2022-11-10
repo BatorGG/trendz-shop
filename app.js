@@ -411,14 +411,6 @@ app.post("/send-application", async (req, res) => {
   }
 });
 
-
-//Keep awake
-setInterval(() => {
-  http.get("http://www.trendz-shop.com/");
-  console.log("Awaken!");
-}, 5 * 60 * 1000); // every 5 minutes
-
-
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));
