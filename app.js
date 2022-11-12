@@ -119,6 +119,7 @@ app.post("/validate-coupon", async (req, res) => {
 // Stripe
 app.post("/create-checkout-session", async (req, res) => {
     try {
+        console.log("Checkout Initiated!");
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ["card"],
             mode: "payment",
