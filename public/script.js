@@ -980,24 +980,18 @@ function requestLogger(msg){
 		requestedUrl = msg;
 	}
 
-	fetch("/log-request", {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json"
-		},
-		body: JSON.stringify({
-			currentUser: currentUser,
-			requestedUrl: requestedUrl
+	var data = {
+		currentUser: currentUser,
+		requestedUrl: requestedUrl
+	};
 
-		})
-	}).then(res => {
-		if (res.ok) return res.json();
-		return res.json().then(json => Promise.reject(json))
-	}).catch(e => {
-		console.error(e.error);
-	})
+	var params = new Blob(
+		[JSON.stringify(data)], 
+		{type : 'application/json'}
+	);
 
-	
+	navigator.sendBeacon('/log', params);
+
 }
 
 function makeId(length) {
@@ -1009,6 +1003,12 @@ function makeId(length) {
     }
     return result;
 }
+
+document.addEventListener('visibilitychange', function logData() {
+	if (document.visibilityState === 'hidden') {
+		requestLogger("hidden");
+	}
+});
 
 window.addEventListener("beforeunload", function (e) {
 

@@ -40,7 +40,7 @@ connectDatabase();
 
 // Body Parser
 app.use(express.json());
-app.use(express.urlencoded({ extended: false}));
+app.use(express.urlencoded({ extended: true}));
 
 //Set a static folder
 app.use(express.static(path.join(__dirname, "public")));
@@ -118,7 +118,7 @@ app.post("/validate-coupon", async (req, res) => {
 
 
 //Session Logger
-app.post("/log-request", (req, res) => {
+app.post("/log", (req, res) => {
 	var currentdate = new Date(); 
 	var datetime = "[" + currentdate.getFullYear() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
