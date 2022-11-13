@@ -92,6 +92,7 @@ const storeItems = new Map([
 const coupons = ["10OFF", "20OFF", "TIKTOK"];
 
 app.post("/validate-coupon", async (req, res) => {
+  console.log("Coupon code activated!");
   var coupon = req.body.coupon.toUpperCase();
 
   // Check if invitational coupon code is valid
@@ -113,6 +114,20 @@ app.post("/validate-coupon", async (req, res) => {
     res.json(false);
   }
   
+});
+
+
+//Session Logger
+app.post("/log-request", (req, res) => {
+	var currentdate = new Date(); 
+	var datetime = "[" + currentdate.getFullYear() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getDate() + " "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds() + "]";
+
+	console.log(datetime + " " + req.body.currentUser + " " + req.body.requestedUrl);
 });
 
 

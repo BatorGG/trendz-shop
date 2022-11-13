@@ -962,3 +962,42 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;                                             
 };
+
+
+//Log requests
+function requestLogger(){
+	var currentUser = localStorage.getItem("currentUser");
+
+	if (currentUser == null || currentUser == "" || typeof currentUser == "undefined"){
+		localStorage.setItem("currentUser", makeId(5));
+	}
+
+	var requestedUrl = window.location.href;
+
+	fetch("/log-request", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify({
+			currentUser: currentUser,
+			requestedUrl: requestedUrl
+
+		})
+	}).catch(e => {
+		console.error(e.error);
+	})
+
+	
+}
+
+function makeId(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+
