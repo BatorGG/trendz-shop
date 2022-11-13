@@ -1008,6 +1008,9 @@ document.addEventListener('visibilitychange', function logData() {
 	if (document.visibilityState === 'hidden') {
 		requestLogger("hidden");
 	}
+	if (document.visibilityState === 'visible') {
+        requestLogger("visible");
+    }
 });
 
 window.addEventListener("beforeunload", function (e) {
