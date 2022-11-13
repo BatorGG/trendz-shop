@@ -350,7 +350,7 @@ for (i = 0; i < faq.length; i++) {
 
 
 //Log requests
-function requestLogger(){
+function requestLogger(msg){
 	var currentUser = localStorage.getItem("currentUser");
 
 	if (!currentUser || currentUser == null || currentUser == "" || typeof currentUser == "undefined"){
@@ -360,6 +360,10 @@ function requestLogger(){
 	}
 
 	var requestedUrl = window.location.href;
+
+    if (msg) {
+		requestedUrl = msg;
+	}
 
 	fetch("/log-request", {
 		method: "POST",
@@ -390,3 +394,11 @@ function makeId(length) {
     }
     return result;
 }
+
+window.addEventListener("beforeunload", function (e) {
+
+	requestLogger("exit");
+
+	return null;	//Webkit, Safari, Chrome
+	
+});
