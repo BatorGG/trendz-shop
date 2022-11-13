@@ -128,6 +128,8 @@ app.post("/log-request", (req, res) => {
                 + currentdate.getSeconds() + "]";
 
 	console.log(datetime + " " + req.body.currentUser + " " + req.body.requestedUrl);
+
+	res.sendStatus(200);
 });
 
 

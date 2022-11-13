@@ -968,8 +968,10 @@ function handleTouchMove(evt) {
 function requestLogger(){
 	var currentUser = localStorage.getItem("currentUser");
 
-	if (currentUser == null || currentUser == "" || typeof currentUser == "undefined"){
-		localStorage.setItem("currentUser", makeId(5));
+	if (!currentUser || currentUser == null || currentUser == "" || typeof currentUser == "undefined"){
+		var newUser = makeId(5);
+		localStorage.setItem("currentUser", newUser);
+        currentUser = newUser;
 	}
 
 	var requestedUrl = window.location.href;
